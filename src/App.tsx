@@ -12,29 +12,32 @@ import Automations from "./pages/Automations";
 import Courses from "./pages/Courses";
 import NotFound from "./pages/NotFound";
 import EventAgentRouter from "./event-agent/EventAgentRouter";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <div className="min-h-dvh" dir="rtl" lang="he">
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/chat" element={<Chat />} />
-            <Route path="/customers" element={<Customers />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/knowledge" element={<Knowledge />} />
-            <Route path="/automations" element={<Automations />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/event-agent/*" element={<EventAgentRouter />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
+      <ErrorBoundary>
+        <div className="min-h-dvh" dir="rtl" lang="he">
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/chat" element={<Chat />} />
+              <Route path="/customers" element={<Customers />} />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/knowledge" element={<Knowledge />} />
+              <Route path="/automations" element={<Automations />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/event-agent/*" element={<EventAgentRouter />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </ErrorBoundary>
     </TooltipProvider>
   </QueryClientProvider>
 );
