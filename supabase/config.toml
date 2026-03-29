@@ -1,0 +1,38 @@
+project_id = "aqguamhoshhglrgpvmnw"
+
+[functions.webhook-facebook]
+verify_jwt = false
+
+[functions.webhook-whapi]
+verify_jwt = false
+
+[functions.ai-response]
+verify_jwt = false
+
+[functions.train-knowledge]
+verify_jwt = false
+
+[functions.send-proactive-message]
+verify_jwt = false
+
+[functions.webhook-elementor]
+verify_jwt = false
+
+[functions.process-automations]
+verify_jwt = false
+
+[functions.scrape-url]
+verify_jwt = false
+
+[functions.crawl-url]
+verify_jwt = false
+
+
+[functions.ea-scrape-events]
+verify_jwt = false
+
+[functions.ea-generate-campaign]
+verify_jwt = false
+
+[functions.generate-followup-message]
+verify_jwt = false

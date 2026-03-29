@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Heebo:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theater CRM Design System - Dark, Dramatic, Gold & Crimson Accents */
+
+@layer base {
+  :root {
+    /* Light mode - rarely used, defaulting to dark */
+    --background: 240 10% 3.9%;
+    --foreground: 45 30% 96%;
+
+    --card: 240 10% 6%;
+    --card-foreground: 45 30% 96%;
+
+    --popover: 240 10% 6%;
+    --popover-foreground: 45 30% 96%;
+
+    /* Theater Gold */
+    --primary: 43 74% 49%;
+    --primary-foreground: 240 10% 3.9%;
+
+    /* Deep Crimson */
+    --secondary: 348 83% 35%;
+    --secondary-foreground: 45 30% 96%;
+
+    /* Muted Theater Gray */
+    --muted: 240 10% 14%;
+    --muted-foreground: 240 5% 55%;
+
+    /* Gold Accent */
+    --accent: 43 74% 49%;
+    --accent-foreground: 240 10% 3.9%;
+
+    /* Crimson Destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 45 30% 96%;
+
+    --border: 240 10% 18%;
+    --input: 240 10% 18%;
+    --ring: 43 74% 49%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar - Velvet Dark */
+    --sidebar-background: 240 10% 5%;
+    --sidebar-foreground: 45 30% 90%;
+    --sidebar-primary: 43 74% 49%;
+    --sidebar-primary-foreground: 240 10% 3.9%;
+    --sidebar-accent: 348 83% 35%;
+    --sidebar-accent-foreground: 45 30% 96%;
+    --sidebar-border: 240 10% 12%;
+    --sidebar-ring: 43 74% 49%;
+
+    /* Custom Theater Tokens */
+    --theater-gold: 43 74% 49%;
+    --theater-gold-light: 43 74% 60%;
+    --theater-gold-dark: 43 74% 38%;
+    --theater-crimson: 348 83% 35%;
+    --theater-crimson-light: 348 83% 47%;
+    --theater-velvet: 240 10% 8%;
+    --theater-spotlight: 43 100% 80%;
+
+    /* Gradients as custom properties */
+    --gradient-gold: linear-gradient(135deg, hsl(43 74% 38%) 0%, hsl(43 74% 60%) 50%, hsl(43 74% 38%) 100%);
+    --gradient-velvet: linear-gradient(180deg, hsl(240 10% 8%) 0%, hsl(240 10% 4%) 100%);
+    --gradient-curtain: linear-gradient(180deg, hsl(348 83% 20%) 0%, hsl(348 83% 35%) 50%, hsl(348 83% 20%) 100%);
+    --gradient-spotlight: radial-gradient(ellipse at center, hsl(43 100% 80% / 0.15) 0%, transparent 70%);
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 45 30% 96%;
+
+    --card: 240 10% 6%;
+    --card-foreground: 45 30% 96%;
+
+    --popover: 240 10% 6%;
+    --popover-foreground: 45 30% 96%;
+
+    --primary: 43 74% 49%;
+    --primary-foreground: 240 10% 3.9%;
+
+    --secondary: 348 83% 35%;
+    --secondary-foreground: 45 30% 96%;
+
+    --muted: 240 10% 14%;
+    --muted-foreground: 240 5% 55%;
+
+    --accent: 43 74% 49%;
+    --accent-foreground: 240 10% 3.9%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 45 30% 96%;
+
+    --border: 240 10% 18%;
+    --input: 240 10% 18%;
+    --ring: 43 74% 49%;
+
+    --sidebar-background: 240 10% 5%;
+    --sidebar-foreground: 45 30% 90%;
+    --sidebar-primary: 43 74% 49%;
+    --sidebar-primary-foreground: 240 10% 3.9%;
+    --sidebar-accent: 348 83% 35%;
+    --sidebar-accent-foreground: 45 30% 96%;
+    --sidebar-border: 240 10% 12%;
+    --sidebar-ring: 43 74% 49%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    direction: rtl;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Heebo', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .theater-card {
+    @apply bg-card border border-border rounded-lg shadow-xl;
+    background: linear-gradient(180deg, hsl(240 10% 7%) 0%, hsl(240 10% 5%) 100%);
+  }
+
+  .theater-glow {
+    box-shadow: 0 0 40px -10px hsl(43 74% 49% / 0.3);
+  }
+
+  .theater-spotlight {
+    background: radial-gradient(ellipse at top, hsl(43 100% 80% / 0.08) 0%, transparent 60%);
+  }
+
+  .gold-text {
+    background: linear-gradient(135deg, hsl(43 74% 60%) 0%, hsl(43 74% 40%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .status-new {
+    @apply bg-primary/20 text-primary border border-primary/30;
+  }
+
+  .status-chatting {
+    @apply bg-blue-500/20 text-blue-400 border border-blue-500/30;
+  }
+
+  .status-converted {
+    @apply bg-emerald-500/20 text-emerald-400 border border-emerald-500/30;
+  }
+
+  .status-lost {
+    @apply bg-muted text-muted-foreground border border-border;
+  }
+}
+
+@layer utilities {
+  .animate-spotlight {
+    animation: spotlight 3s ease-in-out infinite;
+  }
+
+  @keyframes spotlight {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  .animate-curtain {
+    animation: curtain 0.8s ease-out;
+  }
+
+  @keyframes curtain {
+    0% { transform: scaleY(0); transform-origin: top; }
+    100% { transform: scaleY(1); transform-origin: top; }
+  }
+}
+
+/* EventAgent Scoped Styles */
+.event-agent {
+  font-family: 'Heebo', sans-serif;
+  direction: rtl;
+  --ea-bg: #07080d;
+  --ea-accent: #4f8ef7;
+}
+
+.event-agent .ea-sidebar {
+  font-family: 'Heebo', sans-serif;
+}
+
+.event-agent table {
+  direction: rtl;
+}
+
+.event-agent .font-mono,
+.event-agent [class*="font-[JetBrains"] {
+  font-family: 'JetBrains Mono', monospace;
+}
