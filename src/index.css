@@ -120,6 +120,7 @@
   }
 
   body {
+    direction: rtl;
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Heebo', sans-serif;
   }

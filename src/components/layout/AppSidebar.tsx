@@ -60,7 +60,7 @@ export function AppSidebar() {
               }`} />
               <span>{item.label}</span>
               {isActive && (
-                <Sparkles className="mr-auto h-3 w-3 text-primary opacity-60" />
+                <Sparkles className="ms-auto h-3 w-3 text-primary opacity-60" />
               )}
             </NavLink>
           );
