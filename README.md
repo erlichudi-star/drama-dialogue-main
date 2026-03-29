@@ -24,6 +24,12 @@ Changes made via Lovable will be committed automatically to this repo.
 
 If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
+**Changes made in Cursor (or any IDE)** are not visible inside Lovable’s chat — they exist only in Git. To see them in Lovable too, we keep two logs (commit + push after editing):
+
+- [`.lovable/CURSOR_UPDATES.md`](.lovable/CURSOR_UPDATES.md) — short dated entries (easy to spot next to `.lovable/plan.md`)
+- [`CHANGELOG.md`](CHANGELOG.md) — fuller technical notes
+
+
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
 Follow these steps:
